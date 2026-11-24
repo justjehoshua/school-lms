@@ -35,6 +35,9 @@ const StudentLessonsPage = lazy(() => import('@/pages/student/StudentLessonsPage
 const LessonViewerPage = lazy(() => import('@/pages/student/LessonViewerPage'));
 const StudentSchemePage = lazy(() => import('@/pages/student/StudentSchemePage'));
 const StudentUpcomingPage = lazy(() => import('@/pages/student/StudentUpcomingPage'));
+const ExerciseEditorPage = lazy(() => import('@/pages/teacher/ExerciseEditorPage'));
+const StudentExercisesPage = lazy(() => import('@/pages/student/StudentExercisesPage'));
+const ExercisePage = lazy(() => import('@/pages/student/ExercisePage'));
 const SettingsPage = lazy(() => import('@/pages/SettingsPage'));
 
 function RoleRedirect() {
@@ -79,6 +82,7 @@ export default function App() {
             <Route path="lessons/new" element={<LessonFormPage />} />
             <Route path="lessons/:id" element={<LessonFormPage />} />
             <Route path="lessons/:id/slides" element={<SlideEditorPage />} />
+            <Route path="lessons/:id/exercise" element={<ExerciseEditorPage />} />
             <Route path="editor" element={<LessonsPage title="Slide Editor" rowTarget="slides" />} />
             <Route path="published" element={<LessonsPage fixedStatus="published" title="Published Lessons" />} />
             <Route path="progress" element={soon('Student Progress')} />
@@ -92,6 +96,8 @@ export default function App() {
             <Route path="subjects" element={<StudentSubjectsPage />} />
             <Route path="lessons" element={<StudentLessonsPage />} />
             <Route path="lessons/:id" element={<LessonViewerPage />} />
+            <Route path="exercises" element={<StudentExercisesPage />} />
+            <Route path="exercises/:id" element={<ExercisePage />} />
             <Route path="scheme" element={<StudentSchemePage />} />
             <Route path="upcoming" element={<StudentUpcomingPage />} />
             <Route path="settings" element={<SettingsPage />} />

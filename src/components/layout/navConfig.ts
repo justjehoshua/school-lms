@@ -1,4 +1,4 @@
-import { BookOpen, BookText, CalendarClock, CheckCircle2, ClipboardList, GraduationCap, Home, LayoutGrid, Library, Presentation, Settings, Users, BarChart3, School, type LucideIcon } from 'lucide-react';
+import { BookOpen, BookText, CalendarClock, CheckCircle2, ClipboardList, GraduationCap, ListChecks, Home, LayoutGrid, Library, Presentation, Settings, Users, BarChart3, School, type LucideIcon } from 'lucide-react';
 import type { UserRole } from '@/types';
 
 export interface NavItem { label: string; to: string; icon: LucideIcon; end?: boolean }
@@ -20,6 +20,7 @@ export const NAV: Record<UserRole, NavItem[]> = {
     { label: 'Dashboard', to: '/student', icon: Home, end: true },
     { label: 'Subjects', to: '/student/subjects', icon: Library },
     { label: 'Lessons', to: '/student/lessons', icon: BookOpen },
+    { label: 'Exercises', to: '/student/exercises', icon: ListChecks },
     { label: 'Scheme of Work', to: '/student/scheme', icon: ClipboardList },
     { label: 'Upcoming Topics', to: '/student/upcoming', icon: CalendarClock },
     { label: 'Settings', to: '/student/settings', icon: Settings },

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
-import { ArrowLeft, Presentation } from 'lucide-react';
+import { ArrowLeft, ListChecks, Presentation } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
@@ -138,6 +138,11 @@ function LessonForm({ ctx, lesson, linked, slideCount, onSaved }: { ctx: Teacher
               <h2 className="font-semibold text-slate-900">Slides</h2>
               <p className="mt-1 text-sm text-slate-500">{slideCount} slide{slideCount === 1 ? '' : 's'}</p>
               <Link to={`/teacher/lessons/${lesson.id}/slides`}><Button variant="secondary" className="mt-3 w-full"><Presentation className="h-4 w-4" aria-hidden /> Open slide editor</Button></Link>
+            </Card>
+            <Card className="p-5">
+              <h2 className="font-semibold text-slate-900">Exercise</h2>
+              <p className="mt-1 text-sm text-slate-500">Add questions students answer after the lesson.</p>
+              <Link to={`/teacher/lessons/${lesson.id}/exercise`}><Button variant="secondary" className="mt-3 w-full"><ListChecks className="h-4 w-4" aria-hidden /> Manage exercise</Button></Link>
             </Card>
           </>
         ) : <Card className="p-5 text-sm text-slate-600">After you create the lesson you can add slides, then publish or schedule it.</Card>}
